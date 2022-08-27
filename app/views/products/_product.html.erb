@@ -1,7 +1,8 @@
 <div id="<%= dom_id product %>"
+  class="product"
   data-controller="hovercard"
   data-hovercard-url-value="<%= hovercard_user_path(product.user_id) %>"
-  data-action="mouseenter->hovercard#show"
+  data-action="mouseenter->hovercard#show mouseleave->hovercard#hide"
 >
     <%= product.name %>@<%= product.user_id %>
 </div>
