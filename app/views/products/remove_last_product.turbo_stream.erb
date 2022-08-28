@@ -1,0 +1,5 @@
+<%=
+ turbo_stream.replace('product_counter', partial: 'partials/product_counter')
+ 
+%>
+<%= turbo_stream.remove(@product_id) %>

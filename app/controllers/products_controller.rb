@@ -59,6 +59,17 @@ class ProductsController < ApplicationController
   end
 
 
+  def remove_last_product
+    @product_id = helpers.dom_id(Product.last)
+    
+    Product.last.destroy
+    respond_to do |format|
+      format.turbo_stream
+      # format.turbo_stream do
+      #   render turbo_stream: turbo_stream.replace('product_counter', partial: 'partials/product_counter')
+      # end
+    end
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

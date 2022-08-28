@@ -11,6 +11,11 @@
   </head>
 
   <body>
+  
+    <%= render 'partials/product_counter' %>
     <%= yield %>
+  <%= button_to remove_last_product_path, method: :patch do %>
+  REMOVE LAST
+  <% end %>
   </body>
 </html>

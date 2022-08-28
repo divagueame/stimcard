@@ -5,8 +5,10 @@ Rails.application.routes.draw do
     end
   end
   resources :products
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
+  
+  patch '/remove_last_product', to: 'products#remove_last_product', as: 'remove_last_product'
+  
   root "products#index"
 end
+
+
